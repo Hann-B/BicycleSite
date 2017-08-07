@@ -13,6 +13,12 @@ namespace BicycleSite.Controllers
             return View();
         }
 
+        public IActionResult Destinations()
+        {
+
+            return View();
+        }
+
         public IActionResult About()
         {
 
