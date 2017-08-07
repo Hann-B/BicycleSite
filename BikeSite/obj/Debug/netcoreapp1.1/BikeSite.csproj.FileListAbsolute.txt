@@ -1,0 +1,6 @@
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\bin\Debug\netcoreapp1.1\BikeSite.deps.json
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\bin\Debug\netcoreapp1.1\BikeSite.runtimeconfig.json
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\bin\Debug\netcoreapp1.1\BikeSite.runtimeconfig.dev.json
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\bin\Debug\netcoreapp1.1\BikeSite.dll
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\obj\Debug\netcoreapp1.1\BikeSite.csprojResolveAssemblyReference.cache
+c:\users\hanna\documents\visual studio 2017\Projects\BikeSite\BikeSite\obj\Debug\netcoreapp1.1\BikeSite.AssemblyInfo.cs
