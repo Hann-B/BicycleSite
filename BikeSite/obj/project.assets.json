@@ -10948,10 +10948,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\hanna\\documents\\visual studio 2017\\Projects\\BikeSite\\BikeSite\\BikeSite.csproj",
+      "projectUniqueName": "C:\\Users\\Hanna\\Documents\\Visual Studio 2017\\Projects\\BikeSite\\BikeSite\\BikeSite.csproj",
       "projectName": "BikeSite",
-      "projectPath": "c:\\users\\hanna\\documents\\visual studio 2017\\Projects\\BikeSite\\BikeSite\\BikeSite.csproj",
-      "outputPath": "c:\\users\\hanna\\documents\\visual studio 2017\\Projects\\BikeSite\\BikeSite\\obj\\",
+      "projectPath": "C:\\Users\\Hanna\\Documents\\Visual Studio 2017\\Projects\\BikeSite\\BikeSite\\BikeSite.csproj",
+      "outputPath": "C:\\Users\\Hanna\\Documents\\Visual Studio 2017\\Projects\\BikeSite\\BikeSite\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
