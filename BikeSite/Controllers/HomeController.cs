@@ -9,8 +9,8 @@ namespace BikeSite.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly PlaceService _placeService;
-        public HomeController(PlaceService placeService)
+        private readonly IPlaceService _placeService;
+        public HomeController(IPlaceService placeService)
         {
             _placeService = placeService;
         }
