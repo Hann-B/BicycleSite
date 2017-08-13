@@ -10,6 +10,7 @@ using BikeSite.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using BikeSite.Services;
+using ReflectionIT.Mvc.Paging;
 
 namespace BikeSite
 {
@@ -36,6 +37,8 @@ namespace BikeSite
 
             // Add framework services.
             services.AddMvc();
+
+            services.AddPaging();
 
             //DI services
             services.RegisterServices();

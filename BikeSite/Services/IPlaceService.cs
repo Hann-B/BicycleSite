@@ -8,6 +8,7 @@ namespace BikeSite.Services
 {
     public interface IPlaceService
     {
-        Task<PlaceModel.RootObject> GetTopDestinations();
+        Task<IQueryable<PlaceModel.Place>> GetTopDestinations();
+        Task<PlaceModel.Place> GetPlaceDetailsAsync(double lat, double lon, string city);
     }
 }

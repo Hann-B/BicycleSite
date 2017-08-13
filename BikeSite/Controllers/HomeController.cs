@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BikeSite.Services;
+using ReflectionIT.Mvc.Paging;
 using BikeSite.Models;
+using System.Linq;
 
 namespace BikeSite.Controllers
 {
@@ -20,10 +19,11 @@ namespace BikeSite.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Destinations()
+        public async Task<IActionResult> Destinations(int page = 1)
         {
             var listOfPlaces = await _placeService.GetTopDestinations();
-            return View(listOfPlaces);
+            //var model = await PagingList<PlaceModel.Place>.CreateAsync(listOfPlaces as IOrderedQueryable<PlaceModel.Place>, 10, page);
+            return View(listOfPlaces.OrderBy(o=>o.description).Reverse());
         }
 
         public IActionResult About()

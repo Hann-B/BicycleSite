@@ -4,11 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BikeSite.Services;
+using BikeSite.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace BikeSite.Controllers
 {
     public class PlacesController : Controller
     {
+        private readonly IPlaceService _placeService;
+        public PlacesController(IPlaceService placeService)
+        {
+            _placeService = placeService;
+        }
+
+        
         // GET: Places
         public ActionResult PlacesIndex()
         {
@@ -16,9 +26,10 @@ namespace BikeSite.Controllers
         }
 
         // GET: Places/Details/5
-        public ActionResult PlaceDetails(int id)
+        public async Task<ActionResult> Details(double lat, double lon, string city)
         {
-            return View();
+            var SelectedPlace = await _placeService.GetPlaceDetailsAsync(lat,lon, city);
+            return View(SelectedPlace);
         }
 
         // GET: Places/Create

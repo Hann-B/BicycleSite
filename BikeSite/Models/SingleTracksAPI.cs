@@ -9,6 +9,6 @@ namespace BikeSite.Models
     {
         public String X_Mashape_Key { get; set; }
         public String AllUsaPlaces { get; set; }
-        //public String PlaceDetails { get; set; }
+        public String PlaceDetails { get; set; }
     }
 }

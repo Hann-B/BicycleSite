@@ -19,7 +19,7 @@ namespace BikeSite.Services
             _singleTracksApi = optionsAccessor.Value;
         }
 
-        public async Task<PlaceModel.RootObject> GetTopDestinations()
+        public async Task<IQueryable<PlaceModel.Place>> GetTopDestinations()
         {
             var singleTracksApi = _singleTracksApi;
 
@@ -35,13 +35,28 @@ namespace BikeSite.Services
                 raw = reader.ReadToEnd();
             }
             var allresults = JsonConvert.DeserializeObject<PlaceModel.RootObject>(raw);
-  
-            return allresults;
+            //var filteredResults = allresults.places.RemoveAll(r => r.description.ToString() == string.Empty);
+            return allresults.places.AsQueryable();
 
-            //Task<HttpResponse<MyClass>> response = Unirest.get("https://trailapi-trailapi.p.mashape.com/?q[country_cont]=United+States")
-            //.header("X-Mashape-Key", "yBf3jtD85Jmshy4ot1trl6UGG49rp1qXRdsjsnwlIG9upX5cYd")
-            //.header("Accept", "text/plain")
-            //.asString();
         }
+
+        public async Task<PlaceModel.Place> GetPlaceDetailsAsync(double lat, double lon, string city)
+        {
+            var singleTracksApi = _singleTracksApi;
+
+            var request = (HttpWebRequest)WebRequest.Create(string.Format(singleTracksApi.PlaceDetails, lat, lon, city));
+            request.Accept = "application/json";
+            request.Headers["X-Mashape-Key"] = singleTracksApi.X_Mashape_Key.ToString();
+
+            WebResponse response = await request.GetResponseAsync();
+
+            var raw = String.Empty;
+            using (var reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8, true, 1024, true))
+            {
+                raw = reader.ReadToEnd();
+            }
+            var selectedPlace = JsonConvert.DeserializeObject<PlaceModel.RootObject>(raw);
+            return selectedPlace.places.FirstOrDefault();
+        } 
     }
 }
