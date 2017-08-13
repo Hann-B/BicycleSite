@@ -8,7 +8,11 @@ namespace BikeSite.Models
 {
     public class PlaceModel
     {
-        public class ActivityType
+        public class Attribs
+        {
+            public string length { get; set; }
+    }
+    public class ActivityType
         {
             public string created_at { get; set; }
             public int id { get; set; }
@@ -24,9 +28,9 @@ namespace BikeSite.Models
             public int activity_type_id { get; set; }
             public string activity_type_name { get; set; }
             public string url { get; set; }
-
+            public Attribs attribs { get; set; }
             public string description { get; set; }
-            public int length { get; set; }
+            public double length { get; set; }
             public ActivityType activity_type { get; set; }
             public string thumbnail { get; set; }
             public object rank { get; set; }

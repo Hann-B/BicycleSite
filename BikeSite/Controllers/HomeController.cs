@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BikeSite.Services;
+using BikeSite.Models;
 
 namespace BikeSite.Controllers
 {
@@ -19,9 +20,9 @@ namespace BikeSite.Controllers
             return View();
         }
 
-        public IActionResult Destinations()
+        public async Task<IActionResult> Destinations()
         {
-            var listOfPlaces = _placeService.GetTopDestinations();
+            var listOfPlaces = await _placeService.GetTopDestinations();
             return View(listOfPlaces);
         }
 
