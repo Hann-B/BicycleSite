@@ -28,7 +28,7 @@ namespace BikeSite.Controllers
         // GET: Places/Details/5
         public async Task<ActionResult> Details(double lat, double lon, string city)
         {
-            var SelectedPlace = await _placeService.GetPlaceDetailsAsync(lat,lon, city);
+            var SelectedPlace = await _placeService.GetPlaceDetailsAsync(lat, lon, city);
             return View(SelectedPlace);
         }
 

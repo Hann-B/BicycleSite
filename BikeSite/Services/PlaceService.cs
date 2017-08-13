@@ -43,8 +43,9 @@ namespace BikeSite.Services
         public async Task<PlaceModel.Place> GetPlaceDetailsAsync(double lat, double lon, string city)
         {
             var singleTracksApi = _singleTracksApi;
+            var DetailStr = string.Format(singleTracksApi.PlaceDetails, lat, lon, city);
 
-            var request = (HttpWebRequest)WebRequest.Create(string.Format(singleTracksApi.PlaceDetails, lat, lon, city));
+            var request = (HttpWebRequest)WebRequest.Create(DetailStr);
             request.Accept = "application/json";
             request.Headers["X-Mashape-Key"] = singleTracksApi.X_Mashape_Key.ToString();
 
